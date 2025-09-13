@@ -1,0 +1,9 @@
+<h3>Create an User</h3>
+<%= link_to 'Back to Users', '/', class: "btn btn-secondary mt-3" %>
+<%= form_with url: '/users/create', method: :post do |form| %>
+  <%= form.text_field :first_name, placeholder: "first_name", value: "achyut" %><br><br>
+  <%= form.text_field :last_name, placeholder: "last_name", value: "kadam" %><br><br>
+  <%= form.text_field :email, placeholder: "email", value: "achyut@gmail.com" %><br><br>
+  <%= form.password_field :password, placeholder: "password", value: "123456789" %><br><br>
+  <%= form.submit %> 
+<% end %>
