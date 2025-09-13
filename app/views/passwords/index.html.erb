@@ -1,0 +1,24 @@
+<h3>All Passwords</h3>
+<%= link_to 'Back to Users', '/', class: "btn btn-secondary mt-3" %>
+<%= link_to 'New Password', '/passwords/new', class: "btn btn-secondary mt-3" %>
+
+<table boarder=1>
+	<thead>
+		<tr>
+			<th>Website Name</th>
+			<th>Website URL</th>
+			<th>Password</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @passwords.each do |password| %>
+			<tr>
+				<td><%= password.website_name %></td>
+				<td><%= password.website_url %></td>
+				<td><%= password.password %></td>
+                <td><%= link_to 'Show Passwords', '/passwords/index', class: "btn btn-secondary mt-3" %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
