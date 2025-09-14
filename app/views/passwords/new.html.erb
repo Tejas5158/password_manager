@@ -1,8 +1,9 @@
-<h1>Passwords#new</h1>
-<%= link_to 'Back to Password', '/passwords/index', class: "btn btn-secondary mt-3" %>
-<p>Find me in app/views/passwords/new.html.erb</p>
+<h1>Passwords</h1>
+<%= link_to 'Back to Password', passwords_index_path(@user_id), class: "btn btn-secondary mt-3" %>
+
 <%= form_with url: '/passwords/create', method: :post do |form| %>
-<%= form.text_field :website_name, placeholder: "Web name" %><br><br>
+  <%= form.hidden_field :user_id, value: @user_id %><br><br>
+  <%= form.text_field :website_name, placeholder: "Web name" %><br><br>
   <%= form.text_field :website_url, placeholder: "Web URL"%><br><br>
   <%= form.text_field :password, placeholder: "********"%><br><br>
   <%= form.submit %> 

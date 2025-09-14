@@ -6,29 +6,9 @@ Rails.application.routes.draw do
   post 'users/create'
   
   # passwords routes
-  get "passwords/index"
-  get "passwords/new" 
   post 'passwords/create'
+  get "passwords/new/:user_id", to: "passwords#new", as: "passwords_new"
+  get "passwords/index/:user_id", to: "passwords#index", as: "passwords_index"
 
-  # students routes
-  get "students/index"
-  get "students/new"
-  post 'students/create'
-
-  # employees routes
-  get "employees/index"
-  get "employees/new"
-  post 'employees/create'
-
-  # managers routes
-  get "managers/index"  
-  get "managers/new"
-  post 'managers/create'
-
-  # login routes
-  get 'login/new'
-  post 'login/create'
-  # delete 'login/destroy'
-
-  root "login#new"
+  root "users#index"
 end
